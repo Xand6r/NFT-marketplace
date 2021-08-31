@@ -14,7 +14,7 @@ const contractAddress = CONFIG.CONTRACT_ADDRESS;
  * Contains an helpoer function who's purpose is to connect a wallet to the DAPP
  * @returns {{address: String, status: JSX}}
  */
-export const connectWallet = async () => {
+export const connectWallet = async (message=null) => {
   // if metamask is present
   if (window.ethereum) {
     // try connecting to it
@@ -36,6 +36,7 @@ export const connectWallet = async () => {
     }
   } else {
     // otherwise it means metamask isnt installed at all
+    message && message.error("Please install metamask on this browser, link is in the message below")
     return {
       address: "",
       status: (
@@ -161,9 +162,10 @@ export function addWalletListener(setWallet, setStatus) {
               method: 'eth_sendTransaction',
               params: [transactionParameters],
           });
+      const url = "https://ropsten.etherscan.io/tx/" + txHash
       return {
           success: true,
-          status: "✅ Check out your transaction on Etherscan: https://ropsten.etherscan.io/tx/" + txHash
+          status: (<span>✅ Check out your transaction on Etherscan: <a href={url} target="_blank">{url}</a> </span>)
       }
   } catch (error) {
       return {

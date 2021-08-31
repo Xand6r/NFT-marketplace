@@ -31,7 +31,7 @@ const Minter = (props) => {
     name: "file",
     multiple: false,
     beforeUpload: (file) => {
-      message.success("uploading files, please hold on!");
+      message.success("uploading files, please hodl on!");
     },
     disabled: uploading,
     customRequest: (file) => {
@@ -72,7 +72,7 @@ const Minter = (props) => {
    * @description When we press the buttont o connect our wallet, run this function
    */
   const connectWalletPressed = async () => {
-    const { status, address } = await connectWallet();
+    const { status, address } = await connectWallet(message);
     setStatus(status);
     setWallet(address);
   };
