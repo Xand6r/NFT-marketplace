@@ -1,0 +1,134 @@
+/* define color pallete as css variables */
+:root {
+  --primary-color: #0a1931;
+  --secondary-color: #6b63ff;
+  --tetiary-color: #ffc947;
+  --extra-color: #efefef;
+  --transition-duration: 300ms;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  color: #254cdd;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 50px 100px;
+}
+
+/* wallet button styles */
+#walletButton {
+  text-align: right;
+  margin-bottom: 50px;
+  line-height: 16px;
+  display: flex;
+  max-height: unset;
+  padding: 7px 50px;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
+#walletButton.--active {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+#walletButton:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+#walletButton img {
+  height: 35px;
+  margin-right: 8px;
+  transition: ease-in var(--transition-duration);
+}
+/* wallet button styles */
+
+/* minter container classes */
+.Minter {
+  margin: 0 auto;
+  text-align: left;
+}
+.Minter__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.Minter__body {
+  min-height: 450px;
+  margin-bottom: 10px;
+}
+.Minter__header__title {
+  font-size: 32px;
+  font-weight: bold;
+}
+/* minter container classes */
+
+/* random styles */
+#ethereum-icon {
+  height: 300px;
+}
+
+/* override styles from antd */
+.ant-upload-list-item-info {
+  display: none !important;
+}
+
+.uploadedimage-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.ant-image {
+  width: 100% !important;
+}
+.ant-image-img {
+  object-fit: contain !important;
+}
+#uploadsection .ant-spin-nested-loading{
+  height: 450px !important;
+}
+.ant-spin-container{
+  height: 100% !important;
+}
+.ant-alert-message{
+  padding: 10px !important;
+  text-align: center !important;
+  font-weight: bold !important;
+}
+/* override styles from antd */
+
+.mint-button {
+  align-self: center;
+}
+
+.mint-nft {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+button {
+  padding: 9px 16px;
+  max-height: 40px;
+  border-color: #254cdd;
+  color: #254cdd;
+  background-color: white;
+  border-radius: 8px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#mintButton {
+  margin-top: 40px;
+  background-color: #254cdd;
+  color: white;
+}
+/* random styles */
